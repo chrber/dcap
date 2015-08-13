@@ -39,10 +39,10 @@ int get_fin( struct vsp_node *);
 int get_ack(int , ConfirmationBlock * );
 
 
-#ifndef HAVE_NTOHLL
-uint64_t ntohll(uint64_t x);
-#endif /* HAVE_NTOHLL */
+#ifndef htonll
+uint64_t htonll(uint64_t value);
+#endif
 
-#ifndef HAVE_HTONLL
-uint64_t htonll(uint64_t arg);
-#endif /* HAVE_HTONLL */
+#ifndef ntohll
+uint64_t ntohll(uint64_t value);
+#endif

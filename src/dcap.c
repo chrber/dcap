@@ -126,10 +126,10 @@ static ConfirmationBlock get_reply(int);
 static int name_invalid(char *);
 static server * url2srv(dcap_url *);
 
-#ifndef HAVE_HTONLL
+#ifndef htonll
     uint64_t  htonll(uint64_t);
 #endif
-#ifndef HAVE_NTOHLL
+#ifndef ntohll
     uint64_t  ntohll(uint64_t);
 #endif
 
@@ -1615,7 +1615,7 @@ get_fin(struct vsp_node * node)
 #  error Unknown Byte order
 #endif
 
-#ifndef HAVE_NTOHLL
+#ifndef ntohll
     uint64_t
     ntohll(uint64_t x)
     {
@@ -1625,15 +1625,15 @@ get_fin(struct vsp_node * node)
         return x;
     #endif /* I_AM_LITTLE_ENDIAN */
     }
-#endif /* HAVE_NTOHLL */
+#endif /* ntohll */
 
-#ifndef HAVE_HTONLL
+#ifndef htonll
     uint64_t
     htonll(uint64_t arg)
     {
         return ntohll(arg);
     }
-#endif /* HAVE_HTONLL */
+#endif /* htonll */
 
 void dc_setReplyHostName(const char *s)
 {
