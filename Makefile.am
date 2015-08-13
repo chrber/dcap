@@ -9,9 +9,6 @@ endif
 if WANT_LIBGSSTUNNEL
 GSSAPI = -with krb
 endif
-if WANT_LIBTELNETTUNNEL
-TELNETAPI = -with telnet
-endif
 if WANT_LIBSSLTUNNEL
 SSLAPI = -with ssl
 endif
@@ -56,7 +53,7 @@ rpm: dist @PACKAGE@.spec
 	cp @PACKAGE@-@VERSION@.tar.gz $(topdir)/SOURCES
 	cp @PACKAGE@.spec $(topdir)/SPECS
 	rpmbuild --define "_topdir $(topdir)" \
-	-ba $(GSSAPI) $(GSIAPI) $(SSLAPI) $(TELNETAPI) \
+	-ba $(GSSAPI) $(GSIAPI) $(SSLAPI) \
 	@PACKAGE@.spec
 
 
