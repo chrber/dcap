@@ -1,13 +1,18 @@
+#include <stdio.h>
+
+#ifdef HAVE_FGETPWENT
 #include <unistd.h>
 #include <pwd.h>
 #include <string.h>
-#include <stdio.h>
 #include <errno.h>
 #include <sys/stat.h>
 #include <fcntl.h>
 #include <stdlib.h>
+#endif
 
 int main (int argn, char **argv) {
+#ifdef HAVE_FGETPWENT
+{
   int valid_change;
 
   int pfd;  /* Integer for file descriptor returned by open(). */
@@ -66,6 +71,9 @@ int main (int argn, char **argv) {
 
   fclose (fpfd); close (pfd);
   return 0;
+# else
+  printf ("Passwd file not supported. \n");
+#endif
 }
 
 
