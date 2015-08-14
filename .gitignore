@@ -1,9 +1,66 @@
-*.lo
+# Object files
 *.o
+*.ko
+*.obj
+*.elf
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Libraries
+*.lib
+*.a
+*.la
+*.lo
+
+# Shared objects (inc. Windows DLLs)
+*.dll
+*.so
+*.so.*
+*.dylib
+
+# Executables
+*.exe
+*.out
+*.app
+*.i*86
+*.x86_64
+*.hex
+
+# Debug files
+*.dSYM/
+
+# Build relted files
 *.in
+Makefile
 aclocal.m4
 autom4te.cache/
+config.log
+config.status
 config/
 configure
-
 .idea/
+dcap.spec
+libtool
+plugins/Makefile
+plugins/*/.libs/
+plugins/gssapi/Makefile
+plugins/*/.deps/
+plugins/ssl/Makefile
+plugins/telnet/Makefile
+src/.deps/
+src/.libs/
+src/Makefile
+src/dcap_test
+src/dcap_version.c
+src/dccp
+src/dcsuck
+src/debug_level.h
+src/readv_test
+src/stamp-h1
+src/wdccp
+tests/.deps/
+tests/Makefile
+
+src/debug_level.h.in~

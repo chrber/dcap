@@ -1,18 +1,12 @@
 
-if WANT_LIBGSITUNNEL
-GSSAPI = gssapi
-endif
 if WANT_LIBGSSTUNNEL
 GSSAPI = gssapi
-endif
-if WANT_LIBTELNETTUNNEL
-TELNET = telnet
 endif
 if WANT_LIBSSLTUNNEL
 SSL = ssl
 endif
 
-SUBDIRS = $(GSSAPI) $(TELNET) $(SSL)
+SUBDIRS = $(GSSAPI) $(SSL)
 
 .PHONY: tags
 tags:
