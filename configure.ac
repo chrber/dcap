@@ -424,6 +424,27 @@ fi
 
 AC_SUBST(DOC_DIR)
 
+dnl =============
+dnl Check Man dir
+dnl =============
+
+if test X = "X${MAND}" ; then
+    MAND=${dcap_prefix}/share/man/${PACKAGE}-${VERSION}
+fi
+AC_MSG_CHECKING([for directory where to install man])
+AC_ARG_WITH(man-dir,[  --with-man-dir=<dir> Default is \$MAND/],
+            man_dir="$withval", man_dir="$MAND")
+if test -d "$man_dir" ; then
+    AC_MSG_RESULT([found $man_dir])
+    MAN_DIR=$man_dir
+else
+    AC_MSG_RESULT([no such directory $man_dir])
+    AC_MSG_RESULT([the directory $man_dir will be created for you if possible])
+    MAN_DIR=$man_dir
+fi
+
+AC_SUBST(MAN_DIR)
+
 AC_SUBST(ac_aux_dir)
 
 dnl Some debugging dcap #defines

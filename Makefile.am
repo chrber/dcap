@@ -16,6 +16,8 @@ if WANT_LIBSSLTUNNEL
 SSLAPI = -with ssl
 endif
 
+MANPAGES=man/dccp.1
+
 AUX_DIST             =  $(ac_aux_dir)/config.guess \
                         $(ac_aux_dir)/config.sub \
                         $(ac_aux_dir)/install-sh \
@@ -25,7 +27,7 @@ AUX_DIST             =  $(ac_aux_dir)/config.guess \
 MAINTAINERCLEANFILES = Makefile.in aclocal.m4 configure config-h.in \
                         stamp-h.in $(AUX_DIST)
 
-ACLOCAL              = aclocal -I $(ac_aux_dir)
+ACLOCAL = aclocal -I $(ac_aux_dir)
 
 
 dist-hook:
@@ -59,7 +61,6 @@ rpm: dist @PACKAGE@.spec
 	-ba $(GSSAPI) $(GSIAPI) $(SSLAPI) $(TELNETAPI) \
 	@PACKAGE@.spec
 
-
 docfiles = \
 	AUTHORS \
 	COPYING \
@@ -68,10 +69,10 @@ docfiles = \
 	INSTALL \
 	README
 
-man1_MANS = \
-	man/dccp.1
+man1_MANS = $(MANPAGES)
 
 docdir = $(DOC_DIR)
+mandir =  $(MAN_DIR)
 doc_DATA = $(docfiles)
-EXTRA_DIST = $(docfiles)
-
+EXTRA_DIST = $(docfiles) \
+             $(MANPAGES)

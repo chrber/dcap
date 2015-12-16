@@ -114,6 +114,7 @@ CPPFLAGS="@CPPFLAGS@" LDFLAGS="@LDFLAGS@" ./configure \
   --bindir=/${bindir} \
   --libdir=/${libdir} \
   --with-doc-dir=%{prefix}/share/doc/@PACKAGE@-@VERSION@ \
+  --with-man-dir=/usr/share/man \
   --includedir=%{prefix}/include/ \
   --with-krb5-gssapi-include=@KRB5_GSSAPI_INCLUDE_DIR@ \
   --with-globus-include=@GLOBUS_INCLUDE_DIR@ \
@@ -142,22 +143,13 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(-,root,root)
 %attr(0755,root,root) %{prefix}/bin/dccp
+%_mandir/man1/dccp.1.gz
 %{prefix}/share/doc/@PACKAGE@-@VERSION@/AUTHORS
 %{prefix}/share/doc/@PACKAGE@-@VERSION@/ChangeLog
 %{prefix}/share/doc/@PACKAGE@-@VERSION@/COPYING
 %{prefix}/share/doc/@PACKAGE@-@VERSION@/INSTALL
 %{prefix}/share/doc/@PACKAGE@-@VERSION@/LICENSE
 %{prefix}/share/doc/@PACKAGE@-@VERSION@/README
-
-
-
-%files tests
-%defattr(0755,root,root)
-%{prefix}/bin/dcap_test
-%{prefix}/bin/dcsuck
-%{prefix}/bin/readv_test
-%{prefix}/bin/wdccp
-%{prefix}/bin/dcap_url-test
 
 %files -n libdcap
 %defattr(-,root,root)
