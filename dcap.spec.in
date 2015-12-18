@@ -103,7 +103,6 @@ This library is dynamically loaded at runtime.
 
 %prep
 %setup -q
-%patch0 -p1
 
 sed 's!@@LIBDIR@@!%{_libdir}!' -i src/tunnelManager.c
 
