@@ -55,7 +55,7 @@ rpm: dist @PACKAGE@.spec
 	$(topdir)/SPECS \
 	$(topdir)/BUILD \
 	$(topdir)/RPMS $(topdir)/SRPMS
-	cp @PACKAGE@-@VERSION@.tar.gz $(topdir)/SOURCES
+	cp @PACKAGE@-@VERSION@.tar.gz $(topdir)/SOURCES/@VERSION@.tar.gz
 	cp @PACKAGE@.spec $(topdir)/SPECS
 	rpmbuild --define "_topdir $(topdir)" \
 	-ba $(GSSAPI) $(GSIAPI) $(SSLAPI) $(TELNETAPI) \
