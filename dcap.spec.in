@@ -107,8 +107,8 @@ This library is dynamically loaded at runtime.
 sed 's!@@LIBDIR@@!%{_libdir}!' -i src/tunnelManager.c
 
 %build
-chmod +x bootstrap.sh
-./bootstrap.sh
+#chmod +x bootstrap.sh
+#./bootstrap.sh
 
 %configure \
     --disable-static \
