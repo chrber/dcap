@@ -148,7 +148,7 @@ make %{?_smp_mflags} check
 
 %files
 %{_bindir}/dccp
-%{_mandir}/man1/dccp.1*
+%{_mandir}/%{name}-%{version}/man1/dccp.1*
 
 %files libs
 %{_libdir}/libdcap.so.*
