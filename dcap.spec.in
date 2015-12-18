@@ -113,7 +113,10 @@ sed 's!@@LIBDIR@@!%{_libdir}!' -i src/tunnelManager.c
 %configure \
     --disable-static \
     --with-globus-include=%{_includedir}/globus \
-    --with-globus-lib=/dummy
+    --with-globus-lib=/dummy \
+    --with-doc-dir=/usr/share/doc/@PACKAGE@-@VERSION@ \
+    --with-man-dir=/usr/share/man
+
 make %{?_smp_mflags}
 
 %install
